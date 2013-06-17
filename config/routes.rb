@@ -1,8 +1,11 @@
 Omraisl::Application.routes.draw do
+  get "users/show"
+
   resources :pins
 
 
   devise_for :users
+  match 'users/:id' => 'users#show', as: :user
 
   #devise_for :installs
 
